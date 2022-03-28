@@ -19,6 +19,7 @@ footer {
   align-items: center;
   padding: 2rem;
   height: 8rem;
+  /* min-height: calc(100vh - 161px); */
 }
 
 footer {
