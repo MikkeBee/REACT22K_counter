@@ -9,15 +9,31 @@ class Main extends React.Component {
     counter: 0,
   };
 
+  addFiveHandler = () => {
+    this.setState({
+      counter: this.state.counter + 5,
+    });
+  };
+
   addOneHandler = () => {
-    console.log("wow you can really dance");
     this.setState({
       counter: this.state.counter + 1,
     });
   };
 
+  resetHandler = () => {
+    this.setState({
+      counter: 0,
+    });
+  };
+
+  removeOneHandler = () => {
+    this.setState({
+      counter: this.state.counter - 1,
+    });
+  };
+
   removeFiveHandler = () => {
-    console.log("ooh good soup");
     this.setState({
       counter: this.state.counter - 5,
     });
@@ -32,16 +48,16 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="buttonArea">
-          <button className="addFive" onClick={buttonHandler}>
+          <button className="addFive" onClick={this.addFiveHandler}>
             Add Five
           </button>
           <button className="addOne" onClick={this.addOneHandler}>
             Add One
           </button>
-          <button className="reset" onClick={buttonHandler}>
+          <button className="reset" onClick={this.resetHandler}>
             Reset
           </button>
-          <button className="removeOne" onClick={buttonHandler}>
+          <button className="removeOne" onClick={this.removeOneHandler}>
             Remove One
           </button>
           <button className="removeFive" onClick={this.removeFiveHandler}>
