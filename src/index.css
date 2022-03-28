@@ -57,7 +57,7 @@ h1 {
   margin: 2rem;
 }
 
-.circleValue {
+.circle p {
   font-size: 7rem;
 }
 
@@ -77,4 +77,10 @@ button {
   font-size: 1.8rem;
   font-weight: 600;
   box-shadow: 0 0 7px #8e8e8e, 0 0 5px #8e8e8e;
+  transform: translateY(5px);
+}
+
+button:active {
+  border-style: inset;
+  transform: translateY(7px);
 }
