@@ -1,0 +1,17 @@
+button {
+  height: 6rem;
+  width: 15rem;
+  background-color: aquamarine;
+  border: none;
+  border-radius: 5px;
+  margin: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 0 7px #8e8e8e, 0 0 5px #8e8e8e;
+  transform: translateY(5px);
+}
+
+button:active {
+  border-style: inset;
+  transform: translateY(7px);
+}

@@ -1,8 +1,6 @@
 import React from "react";
-
-const buttonHandler = () => {
-  console.log("test");
-};
+import Button from "./Button";
+import Circle from "./Circle";
 
 class Main extends React.Component {
   state = {
@@ -28,41 +26,45 @@ class Main extends React.Component {
   };
 
   removeOneHandler = () => {
-    this.setState({
-      counter: this.state.counter - 1,
-    });
+    if (this.state.counter > 0) {
+      this.setState({
+        counter: this.state.counter - 1,
+      });
+    }
   };
 
   removeFiveHandler = () => {
-    this.setState({
-      counter: this.state.counter - 5,
-    });
+    this.state.counter < 5
+      ? this.setState({
+          counter: 0,
+        })
+      : this.setState({
+          counter: this.state.counter - 5,
+        });
   };
 
   render() {
+    let className = "circle";
+
+    if (this.state.counter % 2 == 0) {
+      className += " odd";
+    } else {
+      className += " even";
+    }
+
     return (
       <main className="mainArea">
         <div className="circleArea">
-          <div className="circle">
+          <Circle>
             <p>{this.state.counter}</p>
-          </div>
+          </Circle>
         </div>
         <div className="buttonArea">
-          <button className="addFive" onClick={this.addFiveHandler}>
-            Add Five
-          </button>
-          <button className="addOne" onClick={this.addOneHandler}>
-            Add One
-          </button>
-          <button className="reset" onClick={this.resetHandler}>
-            Reset
-          </button>
-          <button className="removeOne" onClick={this.removeOneHandler}>
-            Remove One
-          </button>
-          <button className="removeFive" onClick={this.removeFiveHandler}>
-            Remove Five
-          </button>
+          <Button click={this.addFiveHandler} value="Add Five" />
+          <Button click={this.addOneHandler}>Add One</Button>
+          <Button click={this.resetHandler}>Reset</Button>
+          <Button click={this.removeOneHandler}>Remove One</Button>
+          <Button click={this.removeFiveHandler}>Remove Five</Button>
         </div>
       </main>
     );
